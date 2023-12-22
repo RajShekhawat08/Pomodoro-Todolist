@@ -1,0 +1,603 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding:  0;
+    text-align: center;
+}
+
+:root{
+    --default : #DFA878;
+    --lightGray : #efefef;
+    --dark : #191717;
+    --gray : #394867;
+    --purple : #7d53a2;
+    --darkGreen : #618264;
+    --red : #CD5C08;
+    --gold : #FFBB5C;
+    --blue : #75C2F6;
+    --darkblue : #525FE1;
+    --purple : #58287F;
+}
+
+
+body{
+    /* background-color: #FFDBC3; */
+    background-color: var(--default);
+    min-height: 100vh;
+    font-family: 'Rancho', cursive;
+    color: white;
+}
+
+
+/* navbar    */
+.nav {
+    max-width: 60%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 1em auto 0;
+
+}
+
+#heading{
+    margin-right: auto;
+}
+#setting{
+    font-family: "Salsa", cursive;
+    line-height: 1;
+    color: white !important;
+    border : none;  
+    padding: 10px;
+    border-radius: 4px;
+    background : rgba(255, 255, 255, .2);
+}
+
+#setting:hover{
+    background : rgba(255, 255, 255, .3);
+}
+.OpenSetting {
+    transform: translateY(3px);
+}
+
+
+/* progress bar */
+.progbar{
+
+    width: 50%;
+    margin: auto;
+    height: 1px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, .1);
+}
+
+.progress{
+    height: 4px;
+    border-radius: 100px;
+    width : 0;
+    background : white;
+    transform: translateY(-1px);
+}
+
+
+
+/* main timer */
+
+.container{
+    margin: 3rem 0 2rem;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+
+.main{
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 550px;
+    font-size: 1.5rem;
+    color: white !important ;
+    padding: 1rem 2rem 2rem
+}
+
+.timer  {
+    font-family: 'Salsa', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    font-size: 1.5em;
+}
+
+
+/* Start pause button outer layer */
+.startpause{
+    position: relative;
+    border : none;
+    border-radius: 6px;
+    padding : 0;
+    min-width:  50% ;
+    margin: auto;
+    background:  rgb(238, 238, 238);
+    cursor: pointer;
+    outline : none
+  
+}
+/* button inner layer */
+
+.front{
+    display: block;
+    position: relative;
+    padding: 12px 42px;
+    border-radius: 6px;
+    /* font-family : ArialRounded; */
+    font-family : 'Salsa', cursive;
+    font-size: 22px;
+    font-weight : bold;
+    width:  100% ;
+    color : #DFA878;
+    background-color: white;
+    transform  : translateY(-6px);
+
+}
+
+/* when button is pressed */
+.btnPressed {
+    transform: translateY(0px);
+}
+
+.tooltip{
+    font-size: .9rem;
+    font-weight: 100px  ;
+    font-family : Arial, Helvetica, sans-serif;
+    color : white;
+    position: absolute;
+    width: 100%;
+    visibility: hidden;
+    background : black;
+    opacity: .9;
+    padding : 5px 0;
+    border-radius : 8px;
+    top: -5px;
+    left : 90%;
+    z-index: 1;
+}
+.startpause:hover .tooltip{
+    visibility: visible;
+}
+
+/* other button style  */
+
+/* .startpausebtn{
+    cursor : pointer;
+    font-family : ArialRounded;
+    font-size: 22px;
+    font-weight : bold;
+    min-width:  60% ;
+    margin-bottom: 16px;
+    position: relative;
+    border: none;
+    border-radius: 6px;
+    color: #DFA878;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.2) ;
+    padding: 1rem ;
+
+} */
+    
+/*  Skip button */
+.skip{
+    position: absolute;
+    display: inline-block;
+    margin-left: 2.5rem;
+}
+#skipbtn{
+    cursor: pointer;
+    background: none;
+    color: white;
+    border:  none;
+    outline: none;
+    font-size: 2rem;
+    display: none;
+}   
+#skipbtn:hover{
+    filter: brightness(.9);
+}
+
+
+
+/* current timer mode ----*/
+.mode{
+    margin: 10px;
+}
+#modeInfo {
+    padding: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Rounds -------------- */
+
+.round{
+    display: flex;
+    justify-content: center;
+    padding: 5px ;
+    margin: .2rem 1rem 1rem;
+}
+.dots {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px;
+    width: .7rem;
+    height: .7rem;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, .1);
+}
+
+
+.btn{
+    font-size: 20px; 
+    font-family :'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: none;
+    color : white;
+    background : none;
+    padding: 6px 16px ;
+    border-radius: 8px;
+}
+
+
+/* Session counts  ---------------------------- */
+.sessioncount{
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+}
+#targetCount{
+    display: none;
+}
+
+
+/* Todo list ------------------------------------------------------------ */
+
+.todoContainer{
+    background :rgba(255, 255, 255, .1);
+
+    width: 550px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 10px;
+    color : black;
+}
+/* todo title */
+.todotitle{
+    color : white;
+    font-size: 2rem;
+    padding: 5px;
+    padding-left: 1rem;
+    text-align: left;
+}
+
+/* task input box */
+.todoInput{
+    background: var(--lightGray) ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 22px;
+}
+/* add task input box */
+.todoInput input{
+    text-align: left;
+    width: 100%;
+    border : none;
+    outline: none;
+    background : transparent;
+    padding: 15px;
+    padding-left: 20px;
+    font-size : 1rem;
+}
+/* add task button */
+.addtask{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: orangered ;
+    border-radius: 22px;
+    padding : 15px 35px;
+    color : white;
+    font-size: 1rem;
+}
+.addtask:hover{
+    filter : brightness(.9);
+}
+
+
+/* list container */
+.todoul{
+    background-color: white;
+    padding: 15px 0;
+    border-radius: 10px;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+}
+/* task */
+.todoul li{
+    list-style-type: none;
+    text-align: left;
+    padding : 5px 30px ;
+    margin-top: 2px;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+}
+/* delete task button */
+.todoul li span{
+    justify-content: center;
+    position: absolute;
+    right:  0;
+    top: 50%;
+    width: 25px;
+    height: 25px;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todoul li span:hover{
+    background-color: gray;
+    color: white;
+}
+
+/* for zebra strips--------- */
+/* .todoul li:nth-child(odd){
+    background: #f9f9f9;
+} */
+
+/* checks off task on completion */
+.taskCompleted{
+    background: #888 !important;
+    color: #fff;
+    text-decoration: line-through;
+}
+
+/* Adds a check mark */
+.taskCompleted::before{
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 8px;
+    left: 12px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 5px;
+}
+
+li:hover{
+    background-color: lightgray;
+}
+
+
+
+
+
+/* Setting modal  --------------------------------------------------------------- */
+
+/* Modal base */
+.settingModal {
+    display: none; /*Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    
+}
+
+.modalcontent{
+    color: black;
+    font-family: 'ArialRounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-weight: 500;
+    width: 350px;
+    margin: auto;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+
+.modalName{
+    text-align: left;
+    padding : 10px 10px 8px ;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.modalclose{
+    padding: 7px;
+    font-size: 1rem;
+    border : none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+.Allsettings{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.underline{
+    height: 1px;
+    width : 100%;
+    background-color: rgb(238, 238, 238);
+    margin: 10px 0;
+}
+
+label { 
+    color: lightgray;
+}
+
+input[type = number] {
+    width: 30%;
+    height: 2rem;
+    border-radius: 1px;
+    border: none;
+    background: var(--lightGray);
+    padding: 10px;
+}
+
+.setting {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px;
+}
+
+.currentColor {
+    width: 30%;
+    height: 2rem;
+    background-color: var(--default);
+    border-radius: 8px;
+    cursor: pointer;
+}
+.currentColor:hover{
+    opacity: 0.7;
+}
+
+
+.settingOK {
+    /* font-weight: bold; */
+    font-size:1rem;
+    width : 100px;
+    border : none;
+    background : #2E3840;
+    color : white;
+    padding : 8px;
+    border-radius: 10px;
+
+}
+.settingOK:hover{
+    background : #001524 ;
+    box-shadow: 0 0 3px #2E3840;
+}
+
+.settingOKouter {
+    background : #efefef;
+    margin-top: 2px;
+    padding: 10px;
+    border-top: 1px solid rgb(238, 238, 238);
+}
+
+
+/* color Picker modal  */
+
+/* Modal base */
+.clrpicker {
+    display: none; /*Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.clrpickMain{
+    color: black;
+    font-family: 'ArialRounded', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-weight: 500;
+    width: 350px;
+    margin: auto;
+    height: auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.clrpickheading
+{
+    padding: 1rem;
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.colorOpts{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    gap: .5rem;
+}
+
+.clr{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.clr:hover{
+    opacity: 0.8;
+}
+
+/* common class for all colors */
+.ccl{      
+    position: relative;
+    width: 90%;
+    height: 90%;
+    border-radius: 8px;
+}
+
+.clr1{
+    background : var(--default);
+}
+.clr2{
+    background : var(--red);
+}
+.clr3{
+    background : var(--gold);
+}
+.clr4{
+    background : var(--darkGreen); 
+}
+
+.clr5{
+    background : var(--blue); 
+}
+.clr6{
+    background : var(--purple); 
+}
+.clr7{
+    background : var(--gray); 
+}
+
+
+/* * check mark */
+.checked::after {                             
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 1rem;
+    left: 1.5rem;
+    transform: rotate(45deg);
+    height: 20px;
+    width: 7px;
+}

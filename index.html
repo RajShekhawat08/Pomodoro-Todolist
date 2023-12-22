@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Rancho&family=Salsa" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="nav">
+        <h1 id="heading">Pomozoro</h1>
+        <div class="navbtns">
+            <button id="setting"> <i class="fa-solid fa-gear"> </i> <span>Settings</span> </button>
+        </div>
+    </div>
+
+<!-- progress bar  -->
+    <div id="progbar" class="progbar">
+        <div id="progress" class="progress"></div>
+    </div>
+
+
+<!-- Main timer container -->
+    <div class="container">
+        <div class="main">
+
+            <div class="mode">
+               <span    class="modeInfo" id="modeInfo">Pomodoro</span>
+            </div>
+
+            <div class="timer">
+                <span>
+                    <h1 id="minutes">25</h1>
+                </span>
+                <span>
+                    <h1 id="seconds">:00</h1> 
+                </span>
+            </div>
+<!-- start pause button -->
+                <button class="startpause">
+                    <span class="front" id="startpausebtn" > START</span>
+                    <p class="tooltip">press space for start/pause</p>
+                </button>
+
+                <div class="skip">
+                    <button id="skipbtn"> <i class="fa-solid fa-forward-step"></i> </button>
+                </div>
+
+        </div>
+    </div>
+<!-- Rounds with dots -->
+    <div class="roundCont">
+        <div id="setsCompleted"></div>
+        <div class="round" id="round">
+            <span class="dots"></span><span class="dots"></span><span class="dots"></span><span class="dots"></span>
+        </div>
+    </div>
+
+
+
+<!-- Session number info -->
+        <div class="sessionInfo" >
+            <div class="sessioncount">
+                <h2 id="sessionCount">#0</h2> <h2 id="targetCount">/ </h2>
+            </div>
+
+        </div>
+
+
+    
+<!-- Todo list   -->
+    <div class="todoContainer">
+
+        <div class="todoHead">
+            <div class="todotitle">To dos</div>
+    
+            <div class="todoInput">
+                <input type="text" name="task" id="task" placeholder="Add your task">
+                <button id="addtask" class="addtask">Add</button>
+            </div>
+        </div>
+
+        <div class="todoList">
+            <ul class="todoul" id="listContainer">  
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+<!-- Setting  Modal code  -->
+
+    <div id="settingModal" class="settingModal">
+        <div class="modalcontent">
+
+            <div class="modalName">
+                Settings
+                <button id="modalclose" class="modalclose"><i class="fa-solid fa-xmark fa-xl"></i></button>
+            </div>
+
+            <div class="Allsettings">
+<!-- custom timer setting -->
+                <div>
+                    <div class="setting">Times (minutes) </div>
+
+                    <div class="setting">
+                        <label for="Setpomo">Pomodoro</label>
+                        <input type="number" step="1" id="Setpomo" name="pomo">
+                    </div>
+                    <div class="setting">
+                        <label for="Setshbreak">Short break</label>
+                        <input type="number" step="1" id="Setshbreak" name="shbreak">
+                    </div>
+                    <div class="setting">
+                        <label for="Setlgbreak">Long break</label>
+                        <input type="number" step="1" id="Setlgbreak" name="Lgbreak">
+                    </div>
+                </div>
+
+                <div class="underline"></div>
+
+<!-- set target session -->
+                <div >
+                    <div class="setting">
+                        <div class="sttngName"><span>Set target session </span> </div>
+                        <input type="number" step="1" id="targetSession" >
+                    </div>
+                </div>
+
+<!-- Pick a theme color -->
+                <div class="setting">
+                    <div class="sttngName"><span>Theme color </span> </div>
+ 
+                    <div id="currentColor" class="currentColor"></div>
+
+                </div>
+
+            </div>
+
+            <div class="settingOKouter ">
+                <button class="settingOK" id="settingOK">OK</button>
+            </div>
+
+        </div>
+    </div>
+
+<!-- Color picker Modal -->
+    <div class="clrpicker" id="clrpicker">
+
+        <div class="clrpickMain">
+
+            <div class="clrpickheading">Pick a Theme color</div> 
+            <div class="colorOpts">
+                <div class="clr"> <div class="clr1 ccl"></div> </div>
+                <div class="clr"> <div class="clr2 ccl"></div> </div>
+                <div class="clr"> <div class="clr3 ccl"></div> </div>
+                <div class="clr"> <div class="clr4 ccl"></div> </div>
+                <div class="clr"> <div class="clr5 ccl"></div> </div>
+                <div class="clr"> <div class="clr6 ccl"></div> </div>
+                <div class="clr"> <div class="clr7 ccl"></div> </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
